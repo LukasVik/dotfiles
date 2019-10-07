@@ -1,4 +1,4 @@
-# bashrc
+# dotfiles
 Useful commands, mainly for working with git.
 
 ## Usage
