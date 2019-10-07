@@ -1,4 +1,4 @@
-BASHRC=/home/lukas/work/repo/bashrc/bashrc.sh
+BASHRC=/home/lukas/work/repo/dotfiles/bashrc.sh
 
 if [ -e ${BASHRC} ]
 then

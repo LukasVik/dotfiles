@@ -51,7 +51,7 @@ function __prompt_command() # Function run after every command
   fi
 
   # Display path. Shorten if too long.
-  local pwd_length=40
+  local pwd_length=50
   local new_pwd="${PWD/#$HOME/~}"
 
   if [ $(echo -n ${new_pwd} | wc -c | tr -d " ") -gt ${pwd_length} ]
@@ -63,12 +63,33 @@ function __prompt_command() # Function run after every command
   PS1+="\$ "
 }
 
+function current_directory_is_a_git_repo
+{
+  git rev-parse --is-inside-work-tree &>/dev/null
+}
+
+
+function get_git_branch
+{
+  if current_directory_is_a_git_repo
+  then
+    local branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD 2>/dev/null)
+    if [ "$branch" == HEAD ]
+    then
+      # Show short sha id
+      git rev-parse --verify --short HEAD 2>/dev/null
+    else
+      # Show name
+      echo -n ${branch}
+    fi
+  fi
+}
+
 
 #
 # Source the other files of this package
 #
 THIS_DIR=$(dirname ${BASH_SOURCE})
-source ${THIS_DIR}/git_commands.sh
 source ${THIS_DIR}/aliases.sh
 
 
@@ -81,7 +102,7 @@ then
 fi
 
 
-# 
+#
 # Shell history
 #
 HISTCONTROL=ignoreboth:erasedups
@@ -91,7 +112,7 @@ shopt -s cmdhist
 shopt -s histappend
 
 
-# 
+#
 # Misc settings
 #
 shopt -s globstar
