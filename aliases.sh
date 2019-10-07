@@ -27,29 +27,53 @@ alias ccccccc="cd ../../../../../.."
 # git quick commands
 #
 alias gut="git"
+alias gti="git"
 alias got="git"
 
-alias branch="git branch -vv"
-alias rebase="git rebase"
-alias co="git checkout"
-alias gx="git checkout"
+alias ga="git add"
+alias gap="git add -p"
+alias gb="git branch -vv"
+alias gd="git diff"
+alias gdir="git difftool --dir-diff"
+alias gf="git fetch"
 alias gpo="git push origin"
 alias gpof="gpo --force-with-lease"
-alias gd="git diff"
-
-alias stat="git -p status"
-alias gs="stat"
+alias grb="git rebase"
+alias gs="git -p status"
+alias gx="git checkout"
 
 alias sha="git rev-parse --verify --short HEAD"
 alias smu="git submodule update --init --recursive"
 alias amend="git commit -a --amend --no-edit"
 
-alias log="git log --abbrev-commit --decorate --date=format:'%Y-%m-%d %H:%M' --format=format:'%C(bold blue)%h%C(reset) - %C(dim green)%cd%C(reset) - %C(dim cyan)%an%C(reset) - %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)'"
-alias gl="log"
-alias gll="log"
+alias log="git log --abbrev-commit --decorate -20 --date=format:'%Y-%m-%d %H:%M' --format=format:'%C(bold blue)%h%C(reset) - %C(dim green)%cd%C(reset) - %C(dim cyan)%an%C(reset) - %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)'"
+alias gll="git log --graph --oneline --decorate --branches"
+alias gl="gll -20"
 
-alias rbmg="rbm && g"
-alias ag="amend && g"
+
+# Try to load tab-completion for git
+if [ -f "/usr/share/bash-completion/completions/git" ]; then
+    source /usr/share/bash-completion/completions/git
+fi
+
+# Set up tab-completion for aliases, if available
+if $(type -t __git_complete > /dev/null)
+then
+    __git_complete ga _git_add
+    __git_complete gap _git_add
+    __git_complete gb _git_branch
+    __git_complete gd _git_diff
+    __git_complete gf _git_fetch
+    __git_complete gpo _git_push
+    __git_complete gpof _git_push
+    __git_complete grb _git_rebase
+    __git_complete grbi _git_rebase
+    __git_complete gx _git_checkout
+
+    __git_complete log _git_log
+    __git_complete gl _git_log
+    __git_complete gll _git_log
+fi
 
 
 function remote
@@ -63,13 +87,6 @@ function remote
 function fetch
 {
   git fetch $(remote) 2>/dev/null
-}
-
-
-function g
-{
-  # Push to gerrit
-  git push $(remote) HEAD:refs/for/master
 }
 
 
@@ -123,20 +140,12 @@ function squash()
 }
 
 
-function squashb()
-{
-  # Checkout to a squash branch
-  local branch_name=$(get_git_branch)
-  git checkout -b ${branch_name}-squash
-}
-
-
-function rb()
+function grbi()
 {
   # Rebase, with or without commit argument.
   if [ ${#} -eq 0 ]
   then
-    commit="HEAD~10"
+    commit="origin/master"
   else
     commit=${1}
   fi

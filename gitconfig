@@ -1,0 +1,32 @@
+[user]
+	name = Lukas Vik
+	email = 2767848-LukasVik@users.noreply.gitlab.com
+[core]
+	editor = code --wait
+
+[fetch]
+	prune = true
+
+[push]
+    # Push only current branch, create remote branch if it does not exist.
+    default=current
+
+[diff]
+    tool = meld
+[difftool "meld"]
+    prompt = false
+    cmd = meld "$LOCAL" "$REMOTE"
+
+[merge]
+    tool = meldtool
+[mergetool "meldtool"]
+    prompt = false
+    cmd = ~/work/repo/dotfiles/meldtool.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+
+[color]
+	ui = auto
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+
