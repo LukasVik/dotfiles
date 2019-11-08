@@ -8,6 +8,8 @@ alias ll="ls -lh"
 alias py="python"
 alias amke="make"
 alias rc="source ~/.bashrc"
+alias grep="grep --line-number --with-filename --color"
+alias grepr="grep -r"
 
 
 
