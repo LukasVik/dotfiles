@@ -26,6 +26,31 @@ alias ccccccc="cd ../../../../../.."
 
 
 #
+# svn quick commands
+#
+alias svngrep="grepr --exclude-dir=\".svn\""
+
+# SVN diff
+function sd()
+{
+  if [ ${#} -eq 0 ]
+  then
+    echo "USAGE: sd REVISION [FILE]"
+    return
+  fi
+
+  if [ ${#} -eq 1 ]
+  then
+    svn diff --summarize -c ${1}
+  elif [ ${#} -eq 2 ]
+  then
+    svn diff --diff-cmd="meld" -c ${1} ${2}
+  fi
+}
+
+
+
+#
 # git quick commands
 #
 alias gut="git"
