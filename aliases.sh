@@ -28,24 +28,34 @@ alias ccccccc="cd ../../../../../.."
 #
 # svn quick commands
 #
+alias sl="svn log --limit 6"
 alias svngrep="grepr --exclude-dir=\".svn\""
 
-# SVN diff
-function sd()
+# SVN status
+function ss()
+{
+  if [ ${#} -eq 1 ]
+  then
+    # Specific revision
+    svn diff --summarize -c ${1}
+    return
+  fi
+  # No revision
+  svn diff --summarize
+}
+
+# SVN diff (can specify files after on command line)
+alias sd="svn diff --diff-cmd=\"meld\""
+
+# SVN diff a specific revision
+function sdr()
 {
   if [ ${#} -eq 0 ]
   then
-    echo "USAGE: sd REVISION [FILE]"
+    echo "USAGE: sdr REVISION [FILES]"
     return
   fi
-
-  if [ ${#} -eq 1 ]
-  then
-    svn diff --summarize -c ${1}
-  elif [ ${#} -eq 2 ]
-  then
-    svn diff --diff-cmd="meld" -c ${1} ${2}
-  fi
+  svn diff --diff-cmd="meld" -c ${@}
 }
 
 
