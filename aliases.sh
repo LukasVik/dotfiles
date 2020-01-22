@@ -189,3 +189,16 @@ function grbi()
   git rebase -i ${commit}
 }
 
+
+function snooze()
+{
+  # Run a command and send notification when it is done.
+  if [ ${#} -eq 0 ]
+  then
+    echo "Need command argument"
+    return
+  fi
+  "${@}"
+  notify-send --expire-time 10000 "Command done" "${@}"
+}
+
