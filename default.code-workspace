@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"telemetry.enableTelemetry": false,
+		"python.linting.enabled": true,
+		"python.linting.pylintArgs": [
+			"--rcfile",
+			"../tsfpga/tsfpga/test/lint/pylintrc"
+		],
+		"python.formatting.autopep8Args": [
+			"--ignore",
+			"E501,E402"
+		],
+		"files.trimTrailingWhitespace": true,
+		"editor.rulers": [
+			90
+		],
+		"workbench.editor.enablePreview": false,
+		"workbench.colorCustomizations": {
+			"[One Monokai]": {
+				"editor.wordHighlightBackground": "#ff00ff",
+				"editor.wordHighlightStrongBackground": "#48ff00",
+				"editor.selectionHighlightBackground": "#7200cf",
+				"minimap.selectionHighlight": "#ff00ff",
+				"editorOverviewRuler.selectionHighlightForeground": "#ff00ff",
+				"editorOverviewRuler.wordHighlightForeground": "#ff00ff",
+				"editorOverviewRuler.wordHighlightStrongForeground": "#48ff00",
+			}
+		}
+	},
+}
