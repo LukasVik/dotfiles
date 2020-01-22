@@ -17,10 +17,10 @@ function snooze()
   if [ ${#} -eq 0 ]
   then
     echo "Need command argument"
-    return
+    return 1
   fi
   "${@}"
-  notify-send --expire-time 10000 "Command done" "${@}"
+  eval notify-send --expire-time 10000 \"Command done\" \"${@}\"
 }
 
 
