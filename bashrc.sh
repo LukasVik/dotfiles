@@ -91,15 +91,9 @@ function get_git_branch
 #
 THIS_DIR=$(dirname ${BASH_SOURCE})
 source ${THIS_DIR}/aliases.sh
+source ${THIS_DIR}/git_commands.sh
+source ${THIS_DIR}/svn_commands.sh
 
-
-#
-# Optional local configuration
-#
-if [ -e ~/.local_bashrc.sh ]
-then
-  source ~/.local_bashrc.sh
-fi
 
 
 #
@@ -112,9 +106,19 @@ shopt -s cmdhist
 shopt -s histappend
 
 
+
 #
 # Misc settings
 #
 shopt -s globstar
 shopt -s checkwinsize
 
+
+
+#
+# Optional local configuration
+#
+if [ -e ~/.local_bashrc.sh ]
+then
+  source ~/.local_bashrc.sh
+fi
