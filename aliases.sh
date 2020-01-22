@@ -113,33 +113,20 @@ then
 fi
 
 
-function remote
+
+function grbm
 {
-  # Get name of remote git server
-  local server_name=$(git remote 2>/dev/null)
-  echo -n ${server_name}
+  # Git rebase master
+  gf
+  git rebase origin/master
 }
 
 
-function fetch
+function gxm
 {
-  git fetch $(remote) 2>/dev/null
-}
-
-
-function rbm
-{
-  # Rebase master
-  fetch
-  git rebase $(remote)/master
-}
-
-
-function com
-{
-  # Checkout master
-  fetch
-  git checkout $(remote)/master -B master
+  # Git checkout master
+  gf
+  git checkout origin/master -B master
 }
 
 
