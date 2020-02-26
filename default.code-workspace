@@ -21,6 +21,16 @@
 		],
 		"workbench.editor.enablePreview": false,
 		"workbench.colorCustomizations": {
+			"[Nord]": {
+				"editor.selectionBackground": "#bf616a",
+				"editor.wordHighlightBackground": "#bf616aee",
+				"editor.wordHighlightStrongBackground": "#a3be8cee",
+				"editor.selectionHighlightBackground": "#bf616aee",
+				"minimap.selectionHighlight": "#ff00ff",
+				"editorOverviewRuler.selectionHighlightForeground": "#ff00ffee",
+				"editorOverviewRuler.wordHighlightForeground": "#ff00ffee",
+				"editorOverviewRuler.wordHighlightStrongForeground": "#48ff00ee",
+			},
 			"[One Monokai]": {
 				"editor.wordHighlightBackground": "#ff00ff",
 				"editor.wordHighlightStrongBackground": "#48ff00",
