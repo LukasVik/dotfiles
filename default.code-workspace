@@ -19,6 +19,9 @@
 		"editor.rulers": [
 			90
 		],
+		"search.exclude": {
+			"**/vunit_out/**": true
+		},
 		"workbench.editor.enablePreview": false,
 		"workbench.colorCustomizations": {
 			"[Nord]": {
@@ -30,7 +33,7 @@
 				"editorOverviewRuler.selectionHighlightForeground": "#ff00ffee",
 				"editorOverviewRuler.wordHighlightForeground": "#ff00ffee",
 				"editorOverviewRuler.wordHighlightStrongForeground": "#48ff00ee",
-			},
+			},	
 			"[One Monokai]": {
 				"editor.wordHighlightBackground": "#ff00ff",
 				"editor.wordHighlightStrongBackground": "#48ff00",
