@@ -22,7 +22,6 @@
 		"search.exclude": {
 			"**/vunit_out/**": true
 		},
-		"scm.diffDecorations": "none",
 		"workbench.editor.enablePreview": false,
 		"workbench.colorCustomizations": {
 			"[Nord]": {
@@ -44,6 +43,11 @@
 				"editorOverviewRuler.wordHighlightForeground": "#ff00ff",
 				"editorOverviewRuler.wordHighlightStrongForeground": "#48ff00",
 			}
-		}
+		},
+		"git.enabled": false,
+		"vunit.python": "python3",
+		"vunit.runpy": "simulate.py",
+		"vunit.findRunPy": false,
+		"vunit.options": "--num-threads 7"
 	},
 }
