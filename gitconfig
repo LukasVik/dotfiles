@@ -12,16 +12,16 @@
     default=current
 
 [diff]
-    tool = meld
-[difftool "meld"]
+    tool = code
+[difftool "code"]
     prompt = false
-    cmd = meld "$LOCAL" "$REMOTE"
+    cmd = code --new-window --diff  --wait "$LOCAL" "$REMOTE"
 
 [merge]
-    tool = meldtool
-[mergetool "meldtool"]
+    tool = mergetool_code
+[mergetool "mergetool_code"]
     prompt = false
-    cmd = ~/work/repo/dotfiles/meldtool.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    cmd = ~/work/repo/dotfiles/mergetool_code.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 
 [color]
 	ui = auto
