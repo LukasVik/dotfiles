@@ -12,10 +12,10 @@
     default=current
 
 [diff]
-    tool = code
-[difftool "code"]
+    tool = difftool_code
+[difftool "difftool_code"]
     prompt = false
-    cmd = code --new-window --diff  --wait "$LOCAL" "$REMOTE"
+    cmd = ~/work/repo/dotfiles/difftool_code.sh "$LOCAL" "$REMOTE"
 
 [merge]
     tool = mergetool_code
