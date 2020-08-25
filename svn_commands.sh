@@ -2,6 +2,7 @@
 # svn quick commands
 #
 alias sl="svn log --limit 6"
+alias sll="svn log | less"
 alias svngrep="grepr --exclude-dir=\".svn\""
 
 # SVN status
