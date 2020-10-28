@@ -25,6 +25,8 @@ alias amend="git commit -a --amend --no-edit"
 alias log="git log --abbrev-commit --decorate -20 --date=format:'%Y-%m-%d %H:%M' --format=format:'%C(bold blue)%h%C(reset) - %C(dim green)%cd%C(reset) - %C(dim cyan)%an%C(reset) - %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)'"
 alias gll="git log --graph --oneline --decorate --branches"
 alias gl="gll -20"
+# git log verbose
+alias glv="git log --graph --decorate --branches --stat"
 
 function grbm
 {
