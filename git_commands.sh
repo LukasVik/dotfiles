@@ -31,14 +31,14 @@ alias glv="git log --graph --decorate --branches --stat"
 function grbm
 {
   # Git rebase master
-  gf
+  gf || return 1
   git rebase origin/master
 }
 
 function gxm
 {
   # Git checkout master
-  gf
+  gf || return 1
   git checkout origin/master -B master
 }
 
