@@ -108,6 +108,13 @@ shopt -s histappend
 
 
 #
+# Path manipulation
+#
+# Locally built rust projects
+PATH=~/.cargo/bin:${PATH}
+
+
+#
 # Misc settings
 #
 shopt -s globstar
