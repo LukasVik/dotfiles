@@ -1,10 +1,11 @@
 # dotfiles
-Useful commands and settings, mainly for working with git.
+Useful commands and settings.
 
-## Usage
+## bashrc
 Checkout the repo and copy .bashrc to your $HOME.
 Adjust the search path at the top of your new $HOME/.bashrc to point to where you placed the repo.
 
+## gitconfig
 Add
 
 ```

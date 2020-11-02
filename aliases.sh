@@ -10,7 +10,7 @@ alias amke="make"
 alias rc="source ~/.bashrc"
 alias grep="grep --line-number --with-filename --color"
 alias grepr="grep -r"
-# Cat but with syntax highilighting, etc. https://github.com/sharkdp/bat
+# Cat but with syntax highlighting, etc. https://github.com/sharkdp/bat
 alias cat="bat"
 
 function snooze()
