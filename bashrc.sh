@@ -119,7 +119,7 @@ PATH=~/.cargo/bin:${PATH}
 #
 shopt -s globstar
 shopt -s checkwinsize
-
+bind "set bell-style none"
 
 
 #
