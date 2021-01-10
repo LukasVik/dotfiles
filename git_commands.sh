@@ -16,6 +16,7 @@ alias gpof="gpo --force-with-lease"
 alias gr="git remote -vv"
 alias grb="git rebase"
 alias gs="git -p status"
+alias gss="git show --stat"
 alias gx="git checkout"
 
 alias sha="git rev-parse --verify --short HEAD"
