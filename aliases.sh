@@ -36,3 +36,8 @@ alias cccc="cd ../../.."
 alias ccccc="cd ../../../.."
 alias cccccc="cd ../../../../.."
 alias ccccccc="cd ../../../../../.."
+
+alias cdt="cd ~/work/repo/tsfpga/tsfpga"
+alias cdm="cd ~/work/repo/tsfpga/hdl_modules"
+alias cdr="cd ~/work/repo/tsfpga/hdl_registers"
+alias cdv="cd ~/work/repo/vunit/vunit"
