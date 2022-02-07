@@ -25,23 +25,6 @@ alias gr="git remote -vv"
 
 alias grb="git rebase"
 
-alias gs="git -p status"
-alias gss="git show --stat"
-
-alias gx="git checkout"
-
-alias sha="git rev-parse --verify --short HEAD"
-
-alias smu="git submodule update --init --recursive"
-
-alias amend="git commit -a --amend --no-edit"
-
-alias log="git log --abbrev-commit --decorate -20 --date=format:'%Y-%m-%d %H:%M' --format=format:'%C(bold blue)%h%C(reset) - %C(dim green)%cd%C(reset) - %C(dim cyan)%an%C(reset) - %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)'"
-alias gll="git log --graph --oneline --decorate --branches"
-alias gl="gll -20"
-# git log verbose
-alias glv="git log --graph --decorate --branches --stat"
-
 function grbm
 {
   # Git rebase master
@@ -49,12 +32,35 @@ function grbm
   git rebase origin/master
 }
 
+function grbi()
+{
+  # Rebase, with or without commit argument.
+  if [ ${#} -eq 0 ]
+  then
+    commit="origin/master"
+  else
+    commit=${1}
+  fi
+  git rebase -i ${commit}
+}
+
+alias gs="git -p status"
+alias gss="git show --stat"
+
+alias gx="git checkout"
+
 function gxm
 {
   # Git checkout master
   gf || return 1
   git checkout origin/master -B master
 }
+
+alias sha="git rev-parse --verify --short HEAD"
+
+alias smu="git submodule update --init --recursive"
+
+alias amend="git commit -a --amend --no-edit"
 
 function commit()
 {
@@ -80,24 +86,18 @@ function squash()
   # Make a "squash me" commit. With or without a describing commit message.
   if [ ${#} -eq 0 ]
   then
-    message="SQUASH"
+    message="SQUASH ME"
   else
-    message="SQUASH: ${@}"
+    message="SQUASH ME: ${@}"
   fi
   commit "${message}"
 }
 
-function grbi()
-{
-  # Rebase, with or without commit argument.
-  if [ ${#} -eq 0 ]
-  then
-    commit="origin/master"
-  else
-    commit=${1}
-  fi
-  git rebase -i ${commit}
-}
+alias log="git log --abbrev-commit --decorate -20 --date=format:'%Y-%m-%d %H:%M' --format=format:'%C(bold blue)%h%C(reset) - %C(dim green)%cd%C(reset) - %C(dim cyan)%an%C(reset) - %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)'"
+alias gll="git log --graph --oneline --decorate --branches"
+alias gl="gll -20"
+# git log verbose
+alias glv="git log --graph --decorate --branches --stat"
 
 
 
