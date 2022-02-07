@@ -7,21 +7,33 @@ alias got="git"
 
 alias ga="git add"
 alias gap="git add -p"
+
 alias gb="git branch -vv"
+alias gbr="gb --remotes"
+
 alias gcm="git commit -m"
+
 alias gd="git diff"
 alias gdir="git difftool --dir-diff"
+
 alias gf="git fetch --all"
+
 alias gpo="git push origin"
 alias gpof="gpo --force-with-lease"
+
 alias gr="git remote -vv"
+
 alias grb="git rebase"
+
 alias gs="git -p status"
 alias gss="git show --stat"
+
 alias gx="git checkout"
 
 alias sha="git rev-parse --verify --short HEAD"
+
 alias smu="git submodule update --init --recursive"
+
 alias amend="git commit -a --amend --no-edit"
 
 alias log="git log --abbrev-commit --decorate -20 --date=format:'%Y-%m-%d %H:%M' --format=format:'%C(bold blue)%h%C(reset) - %C(dim green)%cd%C(reset) - %C(dim cyan)%an%C(reset) - %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)'"
