@@ -41,3 +41,11 @@ alias cdt="cd ~/work/repo/tsfpga/tsfpga"
 alias cdm="cd ~/work/repo/tsfpga/hdl_modules"
 alias cdr="cd ~/work/repo/tsfpga/hdl_registers"
 alias cdv="cd ~/work/repo/vunit/vunit"
+alias cde="cd ~/work/repo/truestream/embedded"
+alias cdc="cd ~/work/repo/truestream/truestream"
+
+
+#
+# Quick command for opening VSCode workspace
+#
+alias codee="code ~/work/repo/truestream/embedded/embedded.code-workspace"
