@@ -112,6 +112,8 @@ shopt -s histappend
 #
 # Locally built rust projects
 PATH=~/.cargo/bin:${PATH}
+# Locally built npm packages
+PATH=~/.npm/bin:${PATH}
 
 
 #
