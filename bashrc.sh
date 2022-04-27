@@ -110,8 +110,13 @@ shopt -s histappend
 #
 # Path manipulation
 #
+
+# Some locally built things end up here
+PATH=~/.local/bin:${PATH}
+
 # Locally built rust projects
 PATH=~/.cargo/bin:${PATH}
+
 # Locally built npm packages
 PATH=~/.npm/bin:${PATH}
 
