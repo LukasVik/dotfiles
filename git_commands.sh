@@ -27,9 +27,9 @@ alias grb="git rebase"
 
 function grbm
 {
-  # Git rebase master
+  # Git rebase main
   gf || return 1
-  git rebase origin/master
+  git rebase origin/main
 }
 
 function grbi()
@@ -37,7 +37,7 @@ function grbi()
   # Rebase, with or without commit argument.
   if [ ${#} -eq 0 ]
   then
-    commit="origin/master"
+    commit="origin/main"
   else
     commit=${1}
   fi
@@ -51,9 +51,9 @@ alias gx="git checkout"
 
 function gxm
 {
-  # Git checkout master
+  # Git checkout main
   gf || return 1
-  git checkout origin/master -B master
+  git checkout origin/main -B main
 }
 
 alias sha="git rev-parse --verify --short HEAD"
