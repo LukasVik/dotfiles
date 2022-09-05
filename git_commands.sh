@@ -13,6 +13,8 @@ alias gbr="gb --remotes"
 
 alias gcm="git commit -m"
 
+alias gcp="git cherry-pick"
+
 alias gd="git diff"
 alias gdir="git difftool --dir-diff"
 
