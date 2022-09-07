@@ -46,7 +46,15 @@ alias cdd="cd ~/work/repo/truestream/documents"
 alias cdb="cd ~/work/repo/truestream/management"
 
 
+
 #
 # Quick command for opening VSCode workspace
 #
 alias codee="code ~/work/repo/truestream/embedded/embedded.code-workspace"
+
+
+
+#
+# To get less noise from Vivado when running standalone
+#
+alias vivado="vivado -nojournal -nolog -notrace"
