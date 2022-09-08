@@ -62,3 +62,11 @@ alias codee="code ~/work/repo/truestream/embedded/embedded.code-workspace"
 # To get less noise from Vivado when running standalone
 #
 alias vivado="vivado -nojournal -nolog -notrace"
+
+
+#
+# FPGA development tools
+#
+num_threads=`\grep -c processor /proc/cpuinfo`
+alias sim="py tools/simulate.py --num-threads ${num_threads}"
+alias simw="sim --gtkwave-fmt ghw"
