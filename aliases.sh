@@ -38,8 +38,8 @@ alias cccccc="cd ../../../../.."
 alias ccccccc="cd ../../../../../.."
 
 alias cdt="cd ~/work/repo/tsfpga/tsfpga"
-alias cdm="cd ~/work/repo/tsfpga/hdl_modules"
-alias cdr="cd ~/work/repo/tsfpga/hdl_registers"
+alias cdm="cd ~/work/repo/hdl_modules/hdl_modules"
+alias cdr="cd ~/work/repo/hdl_registers/hdl_registers"
 
 alias cdv="cd ~/work/repo/vunit/vunit"
 
