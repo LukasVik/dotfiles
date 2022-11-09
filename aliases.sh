@@ -67,6 +67,35 @@ alias vivado="vivado -nojournal -nolog -notrace"
 #
 # FPGA development tools
 #
-num_threads=`\grep -c processor /proc/cpuinfo`
-alias sim="py tools/simulate.py --num-threads ${num_threads}"
-alias simw="sim --gtkwave-fmt ghw"
+num_threads_available=`\grep -c processor /proc/cpuinfo`
+
+# Different repos have the simulate.py script in different locations.
+# This function tries to find the location to be used in the alias functions belows.
+function get_simulate_py_location()
+{
+  # First check the default location
+  if [ -e "tools/simulate.py" ]
+  then
+    echo "tools/simulate.py"
+  fi
+
+  # Otherwise use this location which is used in some repos
+  echo "fpga_tools/simulate.py"
+}
+
+# Shorthand to run simulate.py with maximum amount of threads.
+function sim()
+{
+  local simulate_py_location=$(get_simulate_py_location)
+
+  py ${simulate_py_location} --num-threads ${num_threads_available} ${@}
+}
+
+# Shorthand to run simulate.py with maximum amount of threads and an output format that can be
+# opened in gtkwave.
+function simw()
+{
+  local simulate_py_location=$(get_simulate_py_location)
+
+  py ${simulate_py_location} --num-threads ${num_threads_available} --gtkwave-fmt ghw ${@}
+}
