@@ -77,6 +77,7 @@ function get_simulate_py_location()
   if [ -e "tools/simulate.py" ]
   then
     echo "tools/simulate.py"
+    return
   fi
 
   # Otherwise use this location which is used in some repos
