@@ -64,26 +64,14 @@ alias smu="git submodule update --init --recursive"
 
 alias amend="git commit -a --amend --no-edit"
 
-function commit()
+function gc()
 {
   # Usage: commit My commit message header line
   message="${@}"
   git commit -a -m "${message}"
 }
 
-function wip()
-{
-  # Make a work-in-progress commit. With or without a describing commit message.
-  if [ ${#} -eq 0 ]
-  then
-    message="WIP"
-  else
-    message="WIP: ${@}"
-  fi
-  commit "${message}"
-}
-
-function squash()
+function gsq()
 {
   # Make a "squash me" commit. With or without a describing commit message.
   if [ ${#} -eq 0 ]
@@ -92,7 +80,19 @@ function squash()
   else
     message="SQUASH ME: ${@}"
   fi
-  commit "${message}"
+  gc "${message}"
+}
+
+function gdr()
+{
+  # Make a "drop me" commit. With or without a describing commit message.
+  if [ ${#} -eq 0 ]
+  then
+    message="DROPME, shit commit"
+  else
+    message="DROPME, shit commit: ${@}"
+  fi
+  gc "${message}"
 }
 
 alias log="git log --abbrev-commit --decorate -20 --date=format:'%Y-%m-%d %H:%M' --format=format:'%C(bold blue)%h%C(reset) - %C(dim green)%cd%C(reset) - %C(dim cyan)%an%C(reset) - %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)'"
