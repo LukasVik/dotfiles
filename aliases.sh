@@ -12,6 +12,7 @@ alias grep="grep --line-number --with-filename --color"
 alias grepr="grep -r"
 # Cat but with syntax highlighting, etc. https://github.com/sharkdp/bat
 alias cat="bat"
+alias b="browse"
 
 function snooze()
 {
