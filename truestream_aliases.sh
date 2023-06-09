@@ -10,6 +10,7 @@ alias cdr="cd ~/work/repo/truestream/embedded/external/hdl_registers/hdl_registe
 alias cdv="cd ~/work/repo/vunit/vunit"
 
 alias cde="cd ~/work/repo/truestream/embedded"
+alias cde2="cd ~/work/repo/truestream/embedded2"
 alias cdd="cd ~/work/repo/truestream/documents"
 alias cdb="cd ~/work/repo/truestream/management"
 alias cdw="cd ~/work/repo/truestream/truestream.se"
