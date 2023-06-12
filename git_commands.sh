@@ -118,6 +118,7 @@ then
     __git_complete ga _git_add
     __git_complete gap _git_add
     __git_complete gb _git_branch
+    __git_complete gcp _git_cherry_pick
     __git_complete gd _git_diff
     __git_complete gf _git_fetch
     __git_complete gpo _git_push
