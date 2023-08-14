@@ -102,8 +102,7 @@ function gdr()
 #  %aN = author name (respects .mailmap)
 #  %d = ref names
 #  %s = subject
-# Padding so that subject messages are aligned. 15 is the longest name in our repositories at the moment.
-alias gll="git log --graph --branches --date=format:'%Y-%m-%d %H:%M' --pretty='%C(yellow)%h %C(cyan)%cd %C(green)%<(15,trunc)%aN%C(auto)%d %C(reset)%s'"
+alias gll="git log --graph --branches --date=format:'%Y-%m-%d %H:%M' --pretty='%C(yellow)%h %C(cyan)%cd %C(green)%aN%C(auto)%d %C(reset)%s'"
 # Git log short, aka default.
 alias gl="gll -20"
 # git log verbose.
