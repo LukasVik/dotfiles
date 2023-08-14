@@ -6,7 +6,7 @@ alias gti="git"
 alias got="git"
 
 alias ga="git add"
-alias gap="git add -p"
+alias gap="git add --patch"
 
 alias gb="git branch -vv"
 alias gbr="gb --remotes"
@@ -95,12 +95,19 @@ function gdr()
   gc "${message}"
 }
 
-alias log="git log --abbrev-commit --decorate -20 --date=format:'%Y-%m-%d %H:%M' --format=format:'%C(bold blue)%h%C(reset) - %C(dim green)%cd%C(reset) - %C(dim cyan)%an%C(reset) - %C(white)%s%C(reset) %C(bold yellow)%d%C(reset)'"
-alias gll="git log --graph --oneline --decorate --branches"
+# Git log long.
+# Formatting:
+#  %h = abbreviated commit hash
+#  %cd = committer date (format respects --date= option)
+#  %aN = author name (respects .mailmap)
+#  %d = ref names
+#  %s = subject
+# Padding so that subject messages are aligned. 15 is the longest name in our repositories at the moment.
+alias gll="git log --graph --branches --date=format:'%Y-%m-%d %H:%M' --pretty='%C(yellow)%h %C(cyan)%cd %C(green)%<(15,trunc)%aN%C(auto)%d %C(reset)%s'"
+# Git log short, aka default.
 alias gl="gll -20"
-# git log verbose
-alias glv="git log --graph --decorate --branches --stat"
-
+# git log verbose.
+alias glv="git log --graph --branches --stat"
 
 
 #
