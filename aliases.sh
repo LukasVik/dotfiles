@@ -12,7 +12,7 @@ alias grep="grep --line-number --with-filename --color"
 alias grepr="grep -r"
 # Cat but with syntax highlighting, etc. https://github.com/sharkdp/bat
 alias cat="bat"
-alias b="browse"
+
 
 function snooze()
 {
@@ -26,6 +26,19 @@ function snooze()
   eval notify-send --expire-time 10000 \"Command done\" \"${@}\"
 }
 
+
+function b()
+{
+  # Shorthand for 'browse' command, which is usually an alias for 'xdg-open'.
+  if [ ${#} -eq 0 ]
+  then
+    # If no argument is given, browse current directory.
+    browse .
+  else
+    # Otherwise, open the supplied file or folder.
+    browse "${@}"
+  fi
+}
 
 
 #
