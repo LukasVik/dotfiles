@@ -15,13 +15,13 @@
     tool = difftool_code
 [difftool "difftool_code"]
     prompt = false
-    cmd = ~/work/repo/dotfiles/difftool_code.sh "$LOCAL" "$REMOTE"
+    cmd = ~/work/repo/LukasVik/dotfiles/difftool_code.sh "$LOCAL" "$REMOTE"
 
 [merge]
     tool = mergetool_code
 [mergetool "mergetool_code"]
     prompt = false
-    cmd = ~/work/repo/dotfiles/mergetool_code.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    cmd = ~/work/repo/LukasVik/dotfiles/mergetool_code.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 
 [color]
 	ui = auto

@@ -10,7 +10,7 @@ Add
 
 ```
 [include]
-    path = "/home/lukas/work/repo/dotfiles/gitconfig"
+    path = "/home/lukas/work/repo/LukasVik/dotfiles/gitconfig"
 ```
 
 to your ``~/.gitconfig``.
