@@ -3,11 +3,10 @@
 #
 # Directories
 #
-alias cdt="cd ~/work/repo/truestream/embedded/external/tsfpga/tsfpga"
 alias cdm="cd ~/work/repo/truestream/embedded/external/hdl_modules/hdl_modules"
 alias cdr="cd ~/work/repo/truestream/embedded/external/hdl_registers/hdl_registers"
-
-alias cdv="cd ~/work/repo/vunit/vunit"
+alias cdt="cd ~/work/repo/truestream/embedded/external/tsfpga/tsfpga"
+alias cdv="cd ~/work/repo/truestream/embedded/external/vunit/vunit"
 
 alias cde="cd ~/work/repo/truestream/embedded"
 alias cde2="cd ~/work/repo/truestream/embedded2"
