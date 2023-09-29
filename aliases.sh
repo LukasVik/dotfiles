@@ -5,13 +5,21 @@ alias l="less"
 alias ls="ls --color=auto --ignore=\"*~\""
 alias s="ls"
 alias ll="ls -lh"
-alias py="python3"
+
 alias amke="make"
-alias rc="source ~/.bashrc"
-alias grep="grep --line-number --with-filename --color"
-alias grepr="grep -r"
+
+alias c="code"
+
 # Cat but with syntax highlighting, etc. https://github.com/sharkdp/bat
 alias cat="bat"
+
+alias grep="grep --line-number --with-filename --color"
+alias grepr="grep -r"
+
+alias py="python3"
+
+# Reload shell config.
+alias rc="source ~/.bashrc"
 
 
 function snooze()
