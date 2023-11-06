@@ -1,6 +1,10 @@
 [user]
+    # This also needs to be in your local ~/.gitconfig in order for the GitPython 
+    # package to find it.
+    # Otherwise commits done by GitPython will have your local PC username as author.
 	name = Lukas Vik
 	email = 2767848-LukasVik@users.noreply.gitlab.com
+
 [core]
 	editor = code --wait
 
@@ -25,7 +29,6 @@
 
 [color]
 	ui = auto
-
 [color "diff"]
 	meta = yellow bold
 	frag = magenta bold
