@@ -3,8 +3,8 @@
 #
 # Directories
 #
-alias cdm="cd ~/work/repo/truestream/embedded/external/hdl_modules/hdl_modules"
-alias cdr="cd ~/work/repo/truestream/embedded/external/hdl_registers/hdl_registers"
+alias cdm="cd ~/work/repo/truestream/embedded/external/hdl-modules/hdl-modules"
+alias cdr="cd ~/work/repo/truestream/embedded/external/hdl-registers/hdl-registers"
 alias cdt="cd ~/work/repo/truestream/embedded/external/tsfpga/tsfpga"
 alias cdv="cd ~/work/repo/truestream/embedded/external/vunit/vunit"
 
