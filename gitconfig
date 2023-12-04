@@ -2,14 +2,14 @@
     # This also needs to be in your local ~/.gitconfig in order for the GitPython 
     # package to find it.
     # Otherwise commits done by GitPython will have your local PC username as author.
-	name = Lukas Vik
-	email = 2767848-LukasVik@users.noreply.gitlab.com
+    name = Lukas Vik
+    email = 10241915+LukasVik@users.noreply.github.com
 
 [core]
-	editor = code --wait
+    editor = code --wait
 
 [fetch]
-	prune = true
+    prune = true
 
 [push]
     # Push only current branch, create remote branch if it does not exist.
@@ -28,8 +28,8 @@
     cmd = ~/work/repo/LukasVik/dotfiles/mergetool_code.sh "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 
 [color]
-	ui = auto
+    ui = auto
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
+    meta = yellow bold
+    frag = magenta bold
 
