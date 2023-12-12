@@ -91,9 +91,9 @@ function get_git_branch
 #
 THIS_DIR=$(dirname ${BASH_SOURCE})
 source ${THIS_DIR}/aliases.sh
-source ${THIS_DIR}/truestream_aliases.sh
 source ${THIS_DIR}/git_commands.sh
 source ${THIS_DIR}/svn_commands.sh
+source ${THIS_DIR}/lukas_aliases.sh
 
 
 

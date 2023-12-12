@@ -1,48 +1,98 @@
+// ---------------------------------------------------------------------
+// Example VSCode workspace.
 {
 	"folders": [
+		// ---------------------------------------------------------------------
+		// Paths included in workspace.
 		{
 			"path": "."
-		}
+		},
+		{
+			"path": "../../fpga-spelling/fpga-spelling"
+		},
+		{
+			"path": "../../hdl-modules/hdl-modules"
+		},
+		{
+			"path": "../../hdl-registers/hdl-registers"
+		},
+		{
+			"path": "../../tsfpga/tsfpga"
+		},
+		{
+			"path": "../../vunit/vunit"
+		},
 	],
+	"extensions": {
+		// ---------------------------------------------------------------------
+		// Recommended extensions to install.
+		"recommendations": [
+			"hbohlin.vhdl-ls",
+			"james-yu.latex-workshop",
+			"ms-python.black-formatter",
+			"ms-python.isort",
+			"ms-python.pylint",
+			"ms-python.python",
+			"ms-vscode.cpptools",
+			"streetsidesoftware.code-spell-checker",
+			"tamasfe.even-better-toml",
+			"alphabotsec.vscode-eclipse-keybindings",
+			"github.vscode-github-actions",
+			"github.copilot",
+			"onecrayon.theme-quietlight-vsc",
+			"sleutho.tcl"
+		]
+	},
 	"settings": {
-		"telemetry.enableTelemetry": false,
-		"python.linting.enabled": true,
-		"python.linting.pylintArgs": [
+		// ---------------------------------------------------------------------
+		// Set in your user settings in order to disable sending data to Microsoft.
+		"telemetry.telemetryLevel": "off",
+		// ---------------------------------------------------------------------
+		// Python settings.
+		"python.analysis.extraPaths": [
+			"../../tsfpga/tsfpga",
+			"../../hdl-registers/hdl-registers",
+			"../../hdl-modules/hdl-modules",
+			"../../vunit/vunit"
+		],
+		"pylint.args": [
 			"--rcfile",
-			"../tsfpga/tsfpga/test/lint/pylintrc"
+			"../../tsfpga/tsfpga/tsfpga/test/lint/pylintrc"
 		],
-		"python.formatting.autopep8Args": [
-			"--ignore",
-			"E501,E402"
+		"black-formatter.args": [
+			"--line-length=100",
 		],
+		"[python]": {
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": true
+			},
+			"editor.defaultFormatter": "ms-python.black-formatter",
+			"editor.formatOnSave": true
+		},
+		// ---------------------------------------------------------------------
+		// Editor settings.
 		"files.trimTrailingWhitespace": true,
 		"editor.rulers": [
-			90
+			100
 		],
+		// ---------------------------------------------------------------------
+		// Files settings.
 		"search.exclude": {
-			"**/vunit_out/**": true
+			"**/vunit_out/**": true,
+			"**/generated/**": true,
+		},
+		"files.exclude": {
+			"**/__pycache__": true
 		},
 		"workbench.editor.enablePreview": false,
+		// ---------------------------------------------------------------------
+		// Git diff settings.
+		"scm.diffDecorations": "none",
+		"git.enabled": false,
+		// ---------------------------------------------------------------------
+		// Color and font customizations.
+		"editor.fontFamily": "'Jetbrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 		"workbench.colorCustomizations": {
-			"[Nord]": {
-				"editor.selectionBackground": "#bf616a",
-				"editor.wordHighlightBackground": "#bf616aee",
-				"editor.wordHighlightStrongBackground": "#a3be8cee",
-				"editor.selectionHighlightBackground": "#bf616aee",
-				"minimap.selectionHighlight": "#ff00ff",
-				"editorOverviewRuler.selectionHighlightForeground": "#ff00ffee",
-				"editorOverviewRuler.wordHighlightForeground": "#ff00ffee",
-				"editorOverviewRuler.wordHighlightStrongForeground": "#48ff00ee",
-			},
-			"[One Monokai]": {
-				"editor.wordHighlightBackground": "#ff00ff",
-				"editor.wordHighlightStrongBackground": "#48ff00",
-				"editor.selectionHighlightBackground": "#7200cf",
-				"minimap.selectionHighlight": "#ff00ff",
-				"editorOverviewRuler.selectionHighlightForeground": "#ff00ff",
-				"editorOverviewRuler.wordHighlightForeground": "#ff00ff",
-				"editorOverviewRuler.wordHighlightStrongForeground": "#48ff00",
-			},
 			"[Quiet Light]": {
 				"editor.selectionBackground": "#bf616a",
 				"editor.wordHighlightBackground": "#bf616aee",
@@ -54,11 +104,42 @@
 				"editorOverviewRuler.wordHighlightStrongForeground": "#48ff00ee",
 			},
 		},
-		"editor.fontFamily": "'Jetbrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-		"git.enabled": false,
-		"vunit.python": "python3",
-		"vunit.runpy": "simulate.py",
-		"vunit.findRunPy": false,
-		"vunit.options": "--num-threads 7"
+		// ---------------------------------------------------------------------
+		// Spell check settings.
+		"cSpell.customDictionaries": {
+			"fpga-spelling-axi": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/axi.txt"
+			},
+			"fpga-spelling-axi-stream": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/axi_stream.txt"
+			},
+			"fpga-spelling-common": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/common.txt"
+			},
+			"fpga-spelling-electrical": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/electrical.txt"
+			},
+			"fpga-spelling-other": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/other.txt"
+			},
+			"fpga-spelling-tools": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/tools.txt"
+			},
+			"fpga-spelling-vhdl": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/vhdl.txt"
+			},
+			"fpga-spelling-xilinx": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/xilinx.txt"
+			},
+		},
+		"cSpell.enableFiletypes": [
+			"json",
+			"md",
+			"rst",
+			"toml",
+			"vhdl",
+			"tcl",
+			"xdc"
+		],
 	},
 }
