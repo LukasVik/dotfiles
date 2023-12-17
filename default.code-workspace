@@ -17,6 +17,9 @@
 			"path": "../../hdl-registers/hdl-registers"
 		},
 		{
+			"path": "../../LukasVik/lukasvik-io"
+		},
+		{
 			"path": "../../tsfpga/tsfpga"
 		},
 		{
