@@ -8,6 +8,8 @@ alias cds="cd ~/work/repo/fpga-spelling/fpga-spelling"
 alias cdm="cd ~/work/repo/hdl-modules/hdl-modules"
 alias cdr="cd ~/work/repo/hdl-registers/hdl-registers"
 alias cdt="cd ~/work/repo/tsfpga/tsfpga"
+
+alias cdg="cd ~/work/repo/ghdl/ghdl"
 alias cdv="cd ~/work/repo/vunit/vunit"
 
 
