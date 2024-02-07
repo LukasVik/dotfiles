@@ -67,7 +67,7 @@
 		],
 		"[python]": {
 			"editor.codeActionsOnSave": {
-				"source.organizeImports": true
+				"source.organizeImports": "explicit"
 			},
 			"editor.defaultFormatter": "ms-python.black-formatter",
 			"editor.formatOnSave": true
@@ -127,8 +127,20 @@
 			"fpga-spelling-electrical": {
 				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/electrical.txt"
 			},
+			"fpga-spelling-matplotlib": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/matplotlib.txt"
+			},
+			"fpga-spelling-numpy": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/numpy.txt"
+			},
 			"fpga-spelling-other": {
 				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/other.txt"
+			},
+			"fpga-spelling-scipy": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/scipy.txt"
+			},
+			"fpga-spelling-signal-processing": {
+				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/signal_processing.txt"
 			},
 			"fpga-spelling-tools": {
 				"path": "${workspaceFolder}/../../fpga-spelling/fpga-spelling/tools.txt"

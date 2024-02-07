@@ -58,6 +58,13 @@ function gxm
   git checkout origin/main -B main
 }
 
+function gxma
+{
+  # Git checkout master
+  gf || return 1
+  git checkout origin/master -B master
+}
+
 alias sha="git rev-parse --verify --short HEAD"
 
 alias smu="git submodule update --init --recursive"
