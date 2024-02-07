@@ -7,6 +7,7 @@
 files = [
     '/home/lukas/work/xilinx/Vivado/2023.1/data/vhdl/src/unisims/unisim_retarget_VCOMP.vhd',
 ]
+is_third_party = true
 
 # ------------------------------------------------------------------------------
 # From hdl-modules.
@@ -74,6 +75,8 @@ files = [
     '../../vunit/vunit/vunit/vhdl/vunit_context.vhd',
     '../../vunit/vunit/vunit/vhdl/vunit_run_context.vhd',
 ]
+is_third_party = true
 
 [libraries.osvvm]
 files = ['../../vunit/vunit/vunit/vhdl/osvvm/**/*.vhd']
+is_third_party = true
