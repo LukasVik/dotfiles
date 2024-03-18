@@ -35,9 +35,9 @@ function snooze()
 }
 
 
+# Shorthand for 'browse' command, which is usually an alias for 'xdg-open'.
 function b()
 {
-  # Shorthand for 'browse' command, which is usually an alias for 'xdg-open'.
   if [ ${#} -eq 0 ]
   then
     # If no argument is given, browse current directory.
@@ -46,6 +46,21 @@ function b()
     # Otherwise, open the supplied file or folder.
     browse "${@}"
   fi
+}
+
+
+# Shorthand to create a file, add to git, and open it for editing.
+function t()
+{
+  if [ ${#} != 1 ]
+  then
+    echo "Wrong argument count"
+    return 1
+  fi
+
+  touch "${@}"
+  git add "${@}"
+  c "${@}"
 }
 
 
@@ -58,7 +73,6 @@ alias cccc="cd ../../.."
 alias ccccc="cd ../../../.."
 alias cccccc="cd ../../../../.."
 alias ccccccc="cd ../../../../../.."
-
 
 
 #
