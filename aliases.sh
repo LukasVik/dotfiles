@@ -118,6 +118,14 @@ function simw()
   py ${simulate_py_location} --num-threads ${num_threads_available} --gtkwave-fmt ghw ${@}
 }
 
+# Shorthand to run simulate.py and open result in GUI.
+function simg()
+{
+  local simulate_py_location=$(get_simulate_py_location)
+
+  py ${simulate_py_location} --num-threads ${num_threads_available} --gtkwave-fmt ghw --gui ${@} &
+}
+
 # Shorthand to run simulate.py with the inspect flag.
 # Does not set maximum number of threads, since multiple matplotlib windows from different threads
 # usually causes problems.
