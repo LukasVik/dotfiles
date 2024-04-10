@@ -104,8 +104,8 @@
 			"editor.selectionHighlightBackground": "#bf616aee",
 			// ---------------------------------------------------------------------
 			// The condensed view of the file contents, on the right of the editor.
-			"minimap.selectionHighlight": "#ff00ff",
-			"minimap.selectionOccurrenceHighlight": "#ff00ff",
+			"minimap.selectionHighlight": "#ff00ff71",
+			"minimap.selectionOccurrenceHighlight": "#ff00ff71",
 			// ---------------------------------------------------------------------
 			// The scrollbar on the very far right.
 			"editorOverviewRuler.selectionHighlightForeground": "#ff00ffee",
