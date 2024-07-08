@@ -1,5 +1,5 @@
 [user]
-    # This also needs to be in your local ~/.gitconfig in order for the GitPython 
+    # This also needs to be in your local ~/.gitconfig in order for the GitPython
     # package to find it.
     # Otherwise commits done by GitPython will have your local PC username as author.
     name = Lukas Vik
@@ -33,3 +33,6 @@
     meta = yellow bold
     frag = magenta bold
 
+[advice]
+
+detachedHead = false
