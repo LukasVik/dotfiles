@@ -11,29 +11,36 @@ is_third_party = true
 
 # ------------------------------------------------------------------------------
 # From hdl-modules.
-[libraries.fifo]
-files = ['../../hdl-modules/hdl-modules/modules/fifo/**/*.vhd']
-
 [libraries.axi]
 files = ['../../hdl-modules/hdl-modules/modules/axi/**/*.vhd']
 
-[libraries.reg_file]
-files = ['../../hdl-modules/hdl-modules/modules/reg_file/**/*.vhd']
+[libraries.bfm]
+files = ['../../hdl-modules/hdl-modules/modules/bfm/**/*.vhd']
 
 [libraries.common]
 files = ['../../hdl-modules/hdl-modules/modules/common/**/*.vhd']
 
-[libraries.math]
-files = ['../../hdl-modules/hdl-modules/modules/math/**/*.vhd']
-
-[libraries.resync]
-files = ['../../hdl-modules/hdl-modules/modules/resync/**/*.vhd']
+[libraries.fifo]
+files = ['../../hdl-modules/hdl-modules/modules/fifo/**/*.vhd']
 
 [libraries.hard_fifo]
 files = ['../../hdl-modules/hdl-modules/modules/hard_fifo/**/*.vhd']
 
-[libraries.bfm]
-files = ['../../hdl-modules/hdl-modules/modules/bfm/**/*.vhd']
+[libraries.lfsr]
+files = ['../../hdl-modules/hdl-modules/modules/lfsr/**/*.vhd']
+
+[libraries.math]
+files = ['../../hdl-modules/hdl-modules/modules/math/**/*.vhd']
+
+[libraries.reg_file]
+files = ['../../hdl-modules/hdl-modules/modules/reg_file/**/*.vhd']
+
+[libraries.resync]
+files = ['../../hdl-modules/hdl-modules/modules/resync/**/*.vhd']
+
+[libraries.sine_generator]
+files = ['../../hdl-modules/hdl-modules/modules/sine_generator/**/*.vhd']
+
 
 # ------------------------------------------------------------------------------
 # From tsfpga.
