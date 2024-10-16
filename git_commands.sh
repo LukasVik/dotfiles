@@ -21,6 +21,7 @@ alias gdir="git difftool --dir-diff"
 alias gf="git fetch --all"
 
 alias gpo="git push origin"
+alias gop="gpo"
 alias gpof="gpo --force-with-lease"
 
 alias gr="git remote -vv"
