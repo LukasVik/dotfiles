@@ -21,6 +21,8 @@ alias py="python3"
 # Reload shell config.
 alias rc="source ~/.bashrc"
 
+alias tf="tail -f"
+
 
 function snooze()
 {
