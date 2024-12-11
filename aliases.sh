@@ -128,6 +128,18 @@ function simg()
   py ${simulate_py_location} --num-threads ${num_threads_available} --viewer-fmt ghw --gui ${@} &
 }
 
+# Simulate and open in surfer.
+function sims()
+{
+  local simulate_py_location=$(get_simulate_py_location)
+
+  # Format options are: fst, ghw, vcd.
+  # surfer does not support unbounded arrays in ghw.
+  # fst seems a little faster than vcd.
+  # Neither of them support reloading a file while a simulation is running, like ghw does.
+  py ${simulate_py_location} --num-threads ${num_threads_available} --viewer-fmt fst --viewer surfer --gui ${@} &
+}
+
 # Shorthand to run simulate.py with the inspect flag.
 # Does not set maximum number of threads, since multiple matplotlib windows from different threads
 # usually causes problems.
