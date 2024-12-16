@@ -111,33 +111,26 @@ function sim()
   py ${simulate_py_location} --num-threads ${num_threads_available} ${@}
 }
 
-# Shorthand to run simulate.py with maximum amount of threads and an output format that can be
-# opened and live updated in gtkwave/surfer.
-function simw()
-{
-  local simulate_py_location=$(get_simulate_py_location)
+# Simulate with an output format that can be opened and live updated in gtkwave/surfer.
+alias simw="sim --viewer-fmt ghw"
 
-  py ${simulate_py_location} --num-threads ${num_threads_available} --viewer-fmt ghw ${@}
-}
-
-# Shorthand to run simulate.py and open result in GUI.
+# Simulate and open in gtkwave.
 function simg()
 {
-  local simulate_py_location=$(get_simulate_py_location)
-
-  py ${simulate_py_location} --num-threads ${num_threads_available} --viewer-fmt ghw --gui ${@} &
+  simw --viewer gtkwave --gui ${@} &
 }
+
+# Simulate with an output format that is suitable to open in surfer.
+# Format options are: fst, ghw, vcd.
+# surfer does not support unbounded arrays in ghw.
+# fst seems a little faster than vcd.
+# Neither of those two support reloading a file while a simulation is running, like ghw does.
+alias simf="sim --viewer-fmt fst"
 
 # Simulate and open in surfer.
 function sims()
 {
-  local simulate_py_location=$(get_simulate_py_location)
-
-  # Format options are: fst, ghw, vcd.
-  # surfer does not support unbounded arrays in ghw.
-  # fst seems a little faster than vcd.
-  # Neither of them support reloading a file while a simulation is running, like ghw does.
-  py ${simulate_py_location} --num-threads ${num_threads_available} --viewer-fmt fst --viewer surfer --gui ${@} &
+  simf --viewer surfer --gui ${@} &
 }
 
 # Shorthand to run simulate.py with the inspect flag.
