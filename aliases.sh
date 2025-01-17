@@ -112,7 +112,7 @@ function sim()
 }
 
 # Simulate with an output format that can be opened and live updated in gtkwave/surfer.
-alias simw="sim --viewer-fmt ghw"
+alias simw="sim --viewer-fmt ghw --minimal"
 
 # Simulate and open in gtkwave.
 function simg()
@@ -125,7 +125,7 @@ function simg()
 # surfer does not support unbounded arrays in ghw.
 # fst seems a little faster than vcd.
 # Neither of those two support reloading a file while a simulation is running, like ghw does.
-alias simf="sim --viewer-fmt fst"
+alias simf="sim --viewer-fmt fst --minimal"
 
 # Simulate and open in surfer.
 function sims()
