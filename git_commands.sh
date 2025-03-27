@@ -28,16 +28,16 @@ alias gr="git remote -vv"
 
 alias grb="git rebase"
 
+# Git rebase main.
 function grbm
 {
-  # Git rebase main
   gf || return 1
   git rebase origin/main
 }
 
+# Git rebase interactive. With or without commit argument.
 function grbi()
 {
-  # Rebase, with or without commit argument.
   if [ ${#} -eq 0 ]
   then
     commit="origin/main"
@@ -52,16 +52,16 @@ alias gss="git show --stat"
 
 alias gx="git checkout"
 
+# Git checkout main.
 function gxm
 {
-  # Git checkout main
   gf || return 1
   git checkout origin/main -B main
 }
 
+# Git checkout master.
 function gxma
 {
-  # Git checkout master
   gf || return 1
   git checkout origin/master -B master
 }
@@ -72,16 +72,18 @@ alias smu="git submodule update --init --recursive"
 
 alias amend="git commit -a --amend --no-edit"
 
+# Git commit.
+# Usage: gc My commit message header line
 function gc()
 {
-  # Usage: commit My commit message header line
   message="${@}"
   git commit -a -m "${message}"
 }
 
+# Git squash.
+# Make a "squash me" commit. With or without a describing commit message.
 function gsq()
 {
-  # Make a "squash me" commit. With or without a describing commit message.
   if [ ${#} -eq 0 ]
   then
     message="SQUASH ME"
@@ -91,9 +93,10 @@ function gsq()
   gc "${message}"
 }
 
+# Git drop.
+# Make a "drop me" commit. With or without a describing commit message.
 function gdr()
 {
-  # Make a "drop me" commit. With or without a describing commit message.
   if [ ${#} -eq 0 ]
   then
     message="DROPME, shit commit"
@@ -101,6 +104,19 @@ function gdr()
     message="DROPME, shit commit: ${@}"
   fi
   gc "${message}"
+}
+
+# Git reset.
+# Reset to a number of commits before HEAD. With or without commit count argument.
+function gre()
+{
+  if [ ${#} -eq 0 ]
+  then
+    count="1"
+  else
+    count="${1}"
+  fi
+  git reset --soft HEAD~${count}
 }
 
 # Git log long.
