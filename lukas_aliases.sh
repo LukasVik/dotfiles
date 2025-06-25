@@ -25,4 +25,4 @@ alias cs="code ~/work/repo/Sarcura/software/sarcura.code-workspace"
 #
 # Set default simulator for scenarios where multiple simulators are installed and available on PATH.
 #
-export VUNIT_SIMULATOR="ghdl"
+export VUNIT_SIMULATOR="nvc"
