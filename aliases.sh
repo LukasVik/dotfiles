@@ -4,7 +4,9 @@
 alias l="less"
 alias ls="ls --color=auto --ignore=\"*~\""
 alias s="ls"
+alias la="ls -a"
 alias ll="ls -lh"
+alias lla="ll -a"
 
 alias amke="make"
 
